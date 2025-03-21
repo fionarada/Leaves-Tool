@@ -1,0 +1,22 @@
+{
+  "name": "leaves-tool",
+  "version": "1.0.0",
+  "description": "A basic one-page portfolio page for deployment on Vercel.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'No build step required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "web",
+    "frontend"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
