@@ -503,6 +503,7 @@ svg {
 .avatar {
   height: 32px;
   width: 32px;
+  min-width: 32px;
   border-radius: var(--lt-radius-full);
   background-color: var(--lt-teal-600);
   align-items: center;
@@ -547,4 +548,20 @@ td {
   font-size: 12px;
   text-align: left;
   font-weight: var(--lt-font-medium);
+}
+/* Default row layout for cards */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--lt-space-4);
+}
+
+
+/* Media Query*/
+@media (max-width: 770px) {
+  .card-row {
+    flex-direction: column;
+    gap: var(--lt-space-4);
+  }
+
 }

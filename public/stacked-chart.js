@@ -87,7 +87,22 @@ function createStackedBarChart(monthlyData) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: { x: { stacked: true }, y: { stacked: true } },
+      scales: {
+        x: { stacked: true },
+        y: { stacked: true },
+      },
+      plugins: {
+        legend: {
+          display: true,
+          position: "bottom", // Position the legend at the bottom
+          align: "start", // Align the legend to the left
+          labels: {
+            boxWidth: 20,
+            padding: 10, // Add padding between legend items
+            color: "rgb(148, 163, 184)", // Customize legend text color
+          },
+        },
+      },
     },
   });
 }
