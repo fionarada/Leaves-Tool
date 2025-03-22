@@ -1,14 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaves Tool </title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <header>
-        <h1>LOA Tool</h1>
-    </header>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaves Tool</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="canvas" style="margin: 0px">
+    <nav class="row vertical-center gap-6 align-stretch">
+      <div class="logo row gap-1-5">
+        <div class="logo-icon column">
+          <svg
+            width="20"
+            height="20"
+            viewbox="0 0 13 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.93971 0.926148C6.32263 0.925929 5.71755 1.09657 5.19151 1.41916C4.66548 1.74176 4.23904 2.2037 3.95945 2.7538C4.62542 2.78644 5.27437 2.97532 5.85384 3.30517C6.43332 3.63502 6.92706 4.09657 7.29515 4.65254C7.57464 4.59967 7.86204 4.57173 8.1549 4.57173H10.2681C10.2766 4.47147 10.2815 4.37061 10.2815 4.26793V1.80109C10.2815 1.56904 10.1893 1.34649 10.0252 1.18241C9.86114 1.01833 9.63859 0.926148 9.40655 0.926148H6.93971ZM3.85676 10.6459C3.36925 10.6602 2.88382 10.5765 2.42922 10.3998C1.97462 10.2232 1.5601 9.95706 1.21019 9.61729C0.860287 9.27753 0.582115 8.87101 0.392148 8.4218C0.202181 7.97259 0.104282 7.48983 0.104248 7.00211V4.27643C0.104248 3.76848 0.516198 3.35653 1.02415 3.35653H3.74983C4.94436 3.35653 6.00522 3.93132 6.66993 4.81902C5.6759 5.16267 4.83081 5.83866 4.27722 6.73294L3.31236 5.76869C3.22597 5.6882 3.11171 5.64437 2.99366 5.64646C2.8756 5.64854 2.76296 5.69636 2.67947 5.77986C2.59598 5.86335 2.54815 5.97599 2.54607 6.09404C2.54399 6.2121 2.58781 6.32636 2.6683 6.41274L3.85919 7.60363C3.68567 8.09334 3.5973 8.60915 3.59793 9.1287C3.59793 9.66095 3.68907 10.1713 3.85676 10.6459Z"
+              fill="#D97706"
+            />
+            <path
+              d="M4.20546 9.1287C4.20546 8.08126 4.62155 7.07672 5.3622 6.33607C6.10286 5.59541 7.1074 5.17932 8.15483 5.17932H11.1406C11.6728 5.17932 12.1042 5.61071 12.1042 6.14297V9.1287C12.1042 9.87094 11.8951 10.5982 11.5007 11.227C11.1064 11.8558 10.5428 12.3608 9.8746 12.684C9.20642 13.0072 8.46068 13.1356 7.72288 13.0544C6.98509 12.9732 6.2851 12.6858 5.70318 12.225L4.98318 12.9444C4.94146 12.9892 4.89115 13.0251 4.83526 13.05C4.77936 13.0749 4.71901 13.0883 4.65783 13.0894C4.59664 13.0904 4.53586 13.0792 4.47912 13.0563C4.42238 13.0334 4.37084 12.9992 4.32756 12.956C4.28429 12.9127 4.25018 12.8612 4.22726 12.8044C4.20434 12.7477 4.19308 12.6869 4.19416 12.6257C4.19524 12.5645 4.20863 12.5042 4.23354 12.4483C4.25845 12.3924 4.29436 12.3421 4.33913 12.3003L5.05852 11.5803C4.5049 10.8832 4.20416 10.0189 4.20546 9.1287ZM6.13579 11.7918L8.93256 8.99503C8.97733 8.95331 9.01324 8.903 9.03815 8.8471C9.06305 8.7912 9.07645 8.73086 9.07752 8.66967C9.0786 8.60848 9.06735 8.54771 9.04443 8.49097C9.02151 8.43422 8.9874 8.38268 8.94413 8.33941C8.90085 8.29613 8.84931 8.26202 8.79257 8.2391C8.73582 8.21618 8.67505 8.20493 8.61386 8.20601C8.55267 8.20709 8.49233 8.22048 8.43643 8.24538C8.38053 8.27029 8.33022 8.3062 8.28851 8.35097L5.49174 11.1477C5.67584 11.3908 5.89275 11.6077 6.13579 11.7918Z"
+              fill="#D97706"
+            />
+          </svg>
+        </div>
+        <div class="app-name">LOA Tool</div>
+      </div>
+      <div class="links row gap-3 align-stretch">
+        <button :active>Status</button>
+        <button>Time Series</button>
+        <button>Tracker</button>
+      </div>
+      <div class="avatar column">FR</div>
+    </nav>
+    <div class="row gap-4" style="height: 100%">
+      <div class="filters column gap-3">
+        <div class="row">
+          <div class="heading-sm text-emphasis space-between">Filters</div>
+        </div>
+        <div class="column gap-6">
+          <div class="date-range row gap-1">
+            <div class="column gap-1">
+              <label for="start">Start Date</label>
+
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
+            </div>
+            <div class="column gap-1">
+              <label for="end">End Date</label>
+
+              <input
+                type="date"
+                id="end date"
+                name="date"
+                value="2018-07-22"
+                min="2018-01-01"
+                max="2018-12-31"
+              />
+            </div>
+          </div>
+          <div class="column gap-1">
+            <label for="start">Month & Year</label>
+
+            <input
+              type="month"
+              id="start"
+              name="start"
+              min="2018-03"
+              value="2018-05"
+            />
+          </div>
+          <div class="column gap-1">
+            <label for="unit">Business Unit</label>
+            <select id="unit">
+              <option value="unit" selected>All</option>
+              <option value="unit">Marketing</option>
+            </select>
+          </div>
+          <div class="column gap-1">
+            <label for="status">Status</label>
+            <select id="status">
+              <option value="status" selected>All</option>
+              <option value="status">Open</option>
+              <option value="status">Closed</option>
+            </select>
+          </div>
+          <div class="column gap-1">
+            <label for="site">Site</label>
+            <select id="site">
+              <option value="site" selected>All</option>
+              <option value="site">345</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="main align-stretch align-items:stretch column gap-4">
+        <div class="visualization column gap-4">
+          <div class="text-emphasis heading-2xl">Status</div>
+          <div class="chart-container">
+            <canvas id="stackedChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card row gap-3">
+          <div class="stat-card column gap-2">
+            <div class="body-xs text-muted">Total Leaves</div>
+            <div class="heading-xl text-emphasis">571</div>
+          </div>
+          <div class="stat-card column gap-2">
+            <div class="body-xs text-muted">FMLA</div>
+            <div class="heading-xl text-emphasis">165</div>
+          </div>
+          <div class="stat-card column gap-2">
+            <div class="body-xs text-muted">Personal</div>
+            <div class="heading-xl text-emphasis">371</div>
+          </div>
+          <div class="stat-card column gap-2">
+            <div class="body-xs text-muted">Military</div>
+            <div class="heading-xl text-emphasis">1</div>
+          </div>
+          <div class="stat-card column gap-2">
+            <div class="body-xs text-muted">Parental</div>
+            <div class="heading-xl text-emphasis">5</div>
+          </div>
+        </div>
+        <div class="table">
+          <table id="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Status</th>
+                <th>Business Unit</th>
+                <th>Days Taken</th>
+                <th>Days O/U</th>
+                <th>Effective Date</th>
+                <th>End Date</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Data will be populated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="stacked-chart.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
